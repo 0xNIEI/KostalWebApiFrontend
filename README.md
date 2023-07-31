@@ -1,5 +1,9 @@
 # KostalWebApiFrontend
 
+# Overview
+
+![Sample Frontend](img/screenshot.png)
+
 # Deployment / Installation
 
 ## Deploy with Docker
