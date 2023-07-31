@@ -15,5 +15,25 @@ function getData() {
 return;
 }
 
+function copyToClipboard(text){
+  navigator.clipboard.writeText(text);
+
+  this.classList.add("copied");
+  // Remove the "copied" class after 2 seconds to revert the tooltip text
+  setTimeout(() => {
+    this.classList.remove("copied");
+  }, 2000);
+}
+
+function handleSpanClick(event) {
+  const clickedSpan = event.target;
+  copyToClipboard.call(clickedSpan, clickedSpan.innerHTML);
+}
+
+const spans = document.querySelectorAll('span[id$="-value"]');
+spans.forEach((span) => {
+  span.addEventListener("click", handleSpanClick);
+});
+
 getData();
 setInterval(function () { getData(); }, 3000);
