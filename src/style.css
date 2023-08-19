@@ -44,4 +44,4 @@ p{
 .value.copied::before {
     content: "Copied!";
     opacity: 1;
-  }
+}
